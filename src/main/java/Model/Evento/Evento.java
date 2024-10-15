@@ -10,7 +10,11 @@ public abstract class Evento {
     private long idEvento;
     private String nomeEvento;
     private LocalDate dataEvento;
-    private float duracaoEvento; // em horas
+    private float duracaoEvento;
+        // em horas
     private ArrayList<Premio> premios;
     private ArrayList<Usuario> participantes;
+    private boolean editavel;
+
+
 }

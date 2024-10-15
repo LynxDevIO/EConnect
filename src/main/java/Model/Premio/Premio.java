@@ -4,12 +4,14 @@ public abstract class Premio {
     private long idPremio;
     private String nomePremio;
     private String caminhoImagem;
+        // formato da imagem: PNG
     private long pontuacaoNecessaria;
     private long pontuacaoAtual; // default = 0
     private boolean pontuacaoAtingida; // default = false
 
-    public Premio(long idPremio, String nomePremio, String caminhoImagem,
-                  long pontuacaoNecessaria, long pontuacaoAtual, boolean pontuacaoAtingida) {
+    public Premio(long idPremio, String nomePremio,
+                  String caminhoImagem, long pontuacaoNecessaria,
+                  long pontuacaoAtual, boolean pontuacaoAtingida) {
         this.idPremio = idPremio;
         this.nomePremio = nomePremio;
         this.caminhoImagem = caminhoImagem;
