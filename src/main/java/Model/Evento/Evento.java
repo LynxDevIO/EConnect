@@ -9,10 +9,12 @@ import java.util.ArrayList;
 public abstract class Evento {
     private long idEvento;
     private String nomeEvento;
+    private String coordenadas;
     private LocalDate dataEvento;
     private float duracaoEvento;
         // em horas
     private ArrayList<Premio> premios;
+    private ArrayList<Usuario> coordenadores;
     private ArrayList<Usuario> participantes;
     private boolean editavel;
 

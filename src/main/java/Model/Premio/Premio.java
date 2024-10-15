@@ -3,17 +3,23 @@ package Model.Premio;
 public abstract class Premio {
     private long idPremio;
     private String nomePremio;
+    private String descricaoPremio;
     private String caminhoImagem;
-        // formato da imagem: PNG
+        // formato da imagem: PNG, com fundo transparente
+        // todo: 120x120?
     private long pontuacaoNecessaria;
     private long pontuacaoAtual; // default = 0
     private boolean pontuacaoAtingida; // default = false
+        // FRONT-END: se True, então a imagem ficará com uma borda com glow dourado
+
 
     public Premio(long idPremio, String nomePremio,
-                  String caminhoImagem, long pontuacaoNecessaria,
-                  long pontuacaoAtual, boolean pontuacaoAtingida) {
+                  String descricaoPremio, String caminhoImagem,
+                  long pontuacaoNecessaria, long pontuacaoAtual,
+                  boolean pontuacaoAtingida) {
         this.idPremio = idPremio;
         this.nomePremio = nomePremio;
+        this.descricaoPremio = descricaoPremio;
         this.caminhoImagem = caminhoImagem;
         this.pontuacaoNecessaria = pontuacaoNecessaria;
         this.pontuacaoAtual = pontuacaoAtual;
@@ -34,6 +40,14 @@ public abstract class Premio {
 
     public void setNomePremio(String nomePremio) {
         this.nomePremio = nomePremio;
+    }
+
+    public String getDescricaoPremio() {
+        return descricaoPremio;
+    }
+
+    public void setDescricaoPremio(String descricaoPremio) {
+        this.descricaoPremio = descricaoPremio;
     }
 
     public String getCaminhoImagem() {

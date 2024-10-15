@@ -2,9 +2,10 @@ package Model.Premio;
 
 public class Broche extends Premio {
     private boolean organizador;
-        // organizador ou participante?
-    public Broche(long idPremio, String nomePremio, String caminhoImagem,
-                  long pontuacaoNecessaria, long pontuacaoAtual, boolean pontuacaoAtingida) {
-        super(idPremio, nomePremio, caminhoImagem, pontuacaoNecessaria, pontuacaoAtual, pontuacaoAtingida);
+    // organizador ou participante?
+
+    public Broche(boolean organizador, long idPremio, String nomePremio, String descricaoPremio, String caminhoImagem, long pontuacaoNecessaria, long pontuacaoAtual, boolean pontuacaoAtingida) {
+        super(idPremio, nomePremio, descricaoPremio, caminhoImagem, pontuacaoNecessaria, pontuacaoAtual, pontuacaoAtingida);
+        this.organizador = organizador;
     }
 }

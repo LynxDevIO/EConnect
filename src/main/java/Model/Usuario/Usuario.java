@@ -11,8 +11,7 @@ public class Usuario {
     private String password;
     private final LocalDate dataCriacaoConta;
     private String nomeUsuario;
-    private double geolocalizacaoAltitude;
-    private double geolocalizacaoLongitude;
+    private String coordenadas;
     private ArrayList<Comunidade> comunidades;
     private ArrayList<Premio> premiosUsuario;
     private ArrayList<Usuario> amigos;
@@ -21,8 +20,7 @@ public class Usuario {
                    String nomeUsuario,
                    LocalDate dataCriacaoConta,
                    String password,
-                   double geolocalizacaoAltitude,
-                   double geolocalizacaoLongitude,
+                   String coordenadas,
                    ArrayList<Comunidade> comunidades,
                    ArrayList<Premio> premiosUsuario,
                    ArrayList<Usuario> amigos) {
@@ -30,8 +28,7 @@ public class Usuario {
         this.password = password;
         this.dataCriacaoConta = dataCriacaoConta;
         this.nomeUsuario = nomeUsuario;
-        this.geolocalizacaoAltitude = geolocalizacaoAltitude;
-        this.geolocalizacaoLongitude = geolocalizacaoLongitude;
+        this.coordenadas = coordenadas;
         this.comunidades = comunidades;
         this.premiosUsuario = premiosUsuario;
         this.amigos = amigos;
