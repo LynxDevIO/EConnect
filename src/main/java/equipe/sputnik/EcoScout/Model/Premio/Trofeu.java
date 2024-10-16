@@ -1,4 +1,4 @@
-package Model.Premio;
+package equipe.sputnik.EcoScout.Model.Premio;
 
 public class Trofeu extends Premio {
     public Trofeu(long idPremio, String nomePremio, String descricaoPremio, String caminhoImagem, long pontuacaoNecessaria, long pontuacaoAtual, boolean pontuacaoAtingida) {

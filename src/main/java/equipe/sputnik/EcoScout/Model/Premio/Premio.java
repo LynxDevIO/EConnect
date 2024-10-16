@@ -1,4 +1,4 @@
-package Model.Premio;
+package equipe.sputnik.EcoScout.Model.Premio;
 
 public abstract class Premio {
     private long idPremio;

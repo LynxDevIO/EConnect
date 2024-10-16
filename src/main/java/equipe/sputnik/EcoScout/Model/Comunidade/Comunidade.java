@@ -1,6 +1,6 @@
-package Model.Comunidade;
+package equipe.sputnik.EcoScout.Model.Comunidade;
 
-import Model.Usuario.Usuario;
+import equipe.sputnik.EcoScout.Model.Usuario.Usuario;
 
 import java.util.ArrayList;
 

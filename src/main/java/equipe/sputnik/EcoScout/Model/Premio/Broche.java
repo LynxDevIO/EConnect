@@ -1,4 +1,4 @@
-package Model.Premio;
+package equipe.sputnik.EcoScout.Model.Premio;
 
 public class Broche extends Premio {
     private boolean organizador;

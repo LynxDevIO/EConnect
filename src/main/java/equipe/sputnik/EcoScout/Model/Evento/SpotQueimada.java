@@ -1,4 +1,4 @@
-package Model.Evento;
+package equipe.sputnik.EcoScout.Model.Evento;
 
 public class SpotQueimada extends Evento {
 }

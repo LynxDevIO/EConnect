@@ -1,2 +1,1 @@
-rootProject.name = "BioScouts"
-
+rootProject.name = "EcoScout"
