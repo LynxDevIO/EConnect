@@ -1,10 +1,17 @@
 package equipe.sputnik.EcoScout.Model.Comunidade;
 
 import equipe.sputnik.EcoScout.Model.Usuario.Usuario;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import org.springframework.data.annotation.Id;
 
 import java.util.ArrayList;
 
+@Entity
 public class Comunidade {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idComunidade;
     private String nome;
     private ArrayList<Usuario> organizadores;

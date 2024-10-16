@@ -1,6 +1,14 @@
 package equipe.sputnik.EcoScout.Model.Premio;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import org.springframework.data.annotation.Id;
+
+@Entity
 public class Premio {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idPremio;
     private int tipoPremio;
         // 0 a 3 (trofeu, medalha, broche e sticker)
