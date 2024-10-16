@@ -1,1 +1,1 @@
-rootProject.name = "EcoScout"
+rootProject.name = "EConnect"

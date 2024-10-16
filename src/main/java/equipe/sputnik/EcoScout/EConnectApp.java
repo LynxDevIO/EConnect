@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EcoScoutApplication {
+public class EConnectApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EcoScoutApplication.class, args);
+		SpringApplication.run(EConnectApp.class, args);
 			// servidor inicia na porta padrão: 8080
 	}
 }
