@@ -15,7 +15,8 @@ public class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idEvento;
-    private int tipoEvento; // 0 a 3 (reflorestamento, reciclagem, spotbiodiversidade, spotqueimadas)
+    private int tipoEvento;
+        // 0 a 5 (genérico, educação, reflorestamento, reciclagem, spotbiodiversidade, spotqueimadas)
     private String nomeEvento;
     private String coordenadas;
     private LocalDate dataEvento;

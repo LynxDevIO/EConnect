@@ -2,27 +2,34 @@ package equipe.sputnik.EcoScout.Model.Premio;
 
 public class Premio {
     private long idPremio;
-    private int tipoPremio; // 0 a 3 (trofeu, medalha, broche e sticker)
+    private int tipoPremio;
+        // 0 a 3 (trofeu, medalha, broche e sticker)
     private String nomePremio;
     private String descricaoPremio;
     private String caminhoImagem;
         // formato da imagem: PNG, com fundo transparente
-        // todo: 120x120?
+        // 640x640
+    private int categoriaPremio;
+        // 0 (do evento), 1 (educacional), 2 (reflorestamento), 3 (reciclagem)...
+        // 4 (spot de biodiversidade) e 5 (spot de queimadas)
+        // Eventos genéricos só premiam sticker e broches do evento.
     private long pontuacaoNecessaria;
+        // 1000 troféu, 500 medalha, 200 broche, 50 sticker.
     private long pontuacaoAtual; // default = 0
     private boolean pontuacaoAtingida; // default = false
         // FRONT-END: se True, então a imagem ficará com uma borda com glow dourado
 
 
-    public Premio(boolean pontuacaoAtingida, long pontuacaoAtual, long pontuacaoNecessaria, String caminhoImagem, String descricaoPremio, String nomePremio, int tipoPremio, long idPremio) {
-        this.pontuacaoAtingida = pontuacaoAtingida;
-        this.pontuacaoAtual = pontuacaoAtual;
-        this.pontuacaoNecessaria = pontuacaoNecessaria;
-        this.caminhoImagem = caminhoImagem;
-        this.descricaoPremio = descricaoPremio;
-        this.nomePremio = nomePremio;
-        this.tipoPremio = tipoPremio;
+    public Premio(long idPremio, int tipoPremio, String nomePremio, String descricaoPremio, String caminhoImagem, int categoriaPremio, long pontuacaoNecessaria, long pontuacaoAtual, boolean pontuacaoAtingida) {
         this.idPremio = idPremio;
+        this.tipoPremio = tipoPremio;
+        this.nomePremio = nomePremio;
+        this.descricaoPremio = descricaoPremio;
+        this.caminhoImagem = caminhoImagem;
+        this.categoriaPremio = categoriaPremio;
+        this.pontuacaoNecessaria = pontuacaoNecessaria;
+        this.pontuacaoAtual = pontuacaoAtual;
+        this.pontuacaoAtingida = pontuacaoAtingida;
     }
 
     public long getIdPremio() {
@@ -63,6 +70,14 @@ public class Premio {
 
     public void setCaminhoImagem(String caminhoImagem) {
         this.caminhoImagem = caminhoImagem;
+    }
+
+    public int getCategoriaPremio() {
+        return categoriaPremio;
+    }
+
+    public void setCategoriaPremio(int categoriaPremio) {
+        this.categoriaPremio = categoriaPremio;
     }
 
     public long getPontuacaoNecessaria() {
