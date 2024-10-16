@@ -5,34 +5,35 @@ import equipe.sputnik.EcoScout.Model.Comunidade.Comunidade;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import org.springframework.data.annotation.Id;
-
+import jakarta.persistence.Id;
+import jakarta.persistence.ElementCollection;
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idUsuario;
+    private Long idUsuario;
     private LocalDate dataCriacaoConta;
     private String usuario;
     private String nomeRealUsuario;
     private String password;
     private String coordenadas;
-    private ArrayList<Comunidade> comunidades;
-    private ArrayList<Premio> premiosUsuario;
-    private ArrayList<Usuario> amigos;
 
-    public Usuario(){
-        ;
+    @ElementCollection
+    private List<Comunidade> comunidades;
+
+    @ElementCollection
+    private List<Premio> premiosUsuario;
+
+    @ElementCollection
+    private List<Usuario> amigos;
+
+    public Usuario() {
     }
 
-    public Usuario(long idUsuario, LocalDate dataCriacaoConta,
-                   String usuario, String nomeRealUsuario,
-                   String password, String coordenadas,
-                   ArrayList<Comunidade> comunidades, ArrayList<Premio> premiosUsuario,
-                   ArrayList<Usuario> amigos) {
+    public Usuario(Long idUsuario, LocalDate dataCriacaoConta, String usuario, String nomeRealUsuario, String password, String coordenadas, List<Comunidade> comunidades, List<Premio> premiosUsuario, List<Usuario> amigos) {
         this.idUsuario = idUsuario;
         this.dataCriacaoConta = dataCriacaoConta;
         this.usuario = usuario;
@@ -48,7 +49,7 @@ public class Usuario {
         return idUsuario;
     }
 
-    public void setIdUsuario(long idUsuario) {
+    public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
 
@@ -92,27 +93,27 @@ public class Usuario {
         this.coordenadas = coordenadas;
     }
 
-    public ArrayList<Comunidade> getComunidades() {
+    public List<Comunidade> getComunidades() {
         return comunidades;
     }
 
-    public void setComunidades(ArrayList<Comunidade> comunidades) {
+    public void setComunidades(List<Comunidade> comunidades) {
         this.comunidades = comunidades;
     }
 
-    public ArrayList<Premio> getPremiosUsuario() {
+    public List<Premio> getPremiosUsuario() {
         return premiosUsuario;
     }
 
-    public void setPremiosUsuario(ArrayList<Premio> premiosUsuario) {
+    public void setPremiosUsuario(List<Premio> premiosUsuario) {
         this.premiosUsuario = premiosUsuario;
     }
 
-    public ArrayList<Usuario> getAmigos() {
+    public List<Usuario> getAmigos() {
         return amigos;
     }
 
-    public void setAmigos(ArrayList<Usuario> amigos) {
+    public void setAmigos(List<Usuario> amigos) {
         this.amigos = amigos;
     }
 }

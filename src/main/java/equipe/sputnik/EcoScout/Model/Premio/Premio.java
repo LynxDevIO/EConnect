@@ -3,32 +3,23 @@ package equipe.sputnik.EcoScout.Model.Premio;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
 @Entity
 public class Premio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idPremio;
+    private Long idPremio;
     private int tipoPremio;
-        // 0 a 3 (trofeu, medalha, broche e sticker)
     private String nomePremio;
     private String descricaoPremio;
     private String caminhoImagem;
-        // formato da imagem: PNG, com fundo transparente
-        // 640x640
     private int categoriaPremio;
-        // 0 (do evento), 1 (educacional), 2 (reflorestamento), 3 (reciclagem)...
-        // 4 (spot de biodiversidade) e 5 (spot de queimadas)
-        // Eventos genéricos só premiam sticker e broches do evento.
     private long pontuacaoNecessaria;
-        // 1000 troféu, 500 medalha, 200 broche, 50 sticker.
-    private long pontuacaoAtual; // default = 0
-    private boolean pontuacaoAtingida; // default = false
-        // FRONT-END: se True, então a imagem ficará com uma borda com glow dourado
+    private long pontuacaoAtual;
+    private boolean pontuacaoAtingida;
 
-
-    public Premio(long idPremio, int tipoPremio, String nomePremio, String descricaoPremio, String caminhoImagem, int categoriaPremio, long pontuacaoNecessaria, long pontuacaoAtual, boolean pontuacaoAtingida) {
+    public Premio(Long idPremio, int tipoPremio, String nomePremio, String descricaoPremio, String caminhoImagem, int categoriaPremio, long pontuacaoNecessaria, long pontuacaoAtual, boolean pontuacaoAtingida) {
         this.idPremio = idPremio;
         this.tipoPremio = tipoPremio;
         this.nomePremio = nomePremio;
@@ -40,11 +31,14 @@ public class Premio {
         this.pontuacaoAtingida = pontuacaoAtingida;
     }
 
+    public Premio() {
+    }
+
     public long getIdPremio() {
         return idPremio;
     }
 
-    public void setIdPremio(long idPremio) {
+    public void setIdPremio(Long idPremio) {
         this.idPremio = idPremio;
     }
 

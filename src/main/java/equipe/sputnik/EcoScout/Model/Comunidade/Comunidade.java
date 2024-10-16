@@ -4,25 +4,27 @@ import equipe.sputnik.EcoScout.Model.Usuario.Usuario;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import org.springframework.data.annotation.Id;
-
-import java.util.ArrayList;
+import jakarta.persistence.Id;
+import jakarta.persistence.ElementCollection;
+import java.util.List;
 
 @Entity
 public class Comunidade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idComunidade;
+    private Long idComunidade;
     private String nome;
-    private ArrayList<Usuario> organizadores;
-        // limite de 20% dos membros?
-    private ArrayList<Usuario> membros;
+
+    @ElementCollection
+    private List<Usuario> organizadores;
+
+    @ElementCollection
+    private List<Usuario> membros;
+
     private final int limiteMembros = 500;
     private int qualidadePremiacao;
-        // 1 a 4;
-        // 1: 1.25x; 2: 1.5x; 3: 1.75x; 4: 2x;
 
-    public Comunidade(long idComunidade, String nome, ArrayList<Usuario> organizadores, ArrayList<Usuario> membros, int qualidadePremiacao) {
+    public Comunidade(Long idComunidade, String nome, List<Usuario> organizadores, List<Usuario> membros, int qualidadePremiacao) {
         this.idComunidade = idComunidade;
         this.nome = nome;
         this.organizadores = organizadores;
@@ -30,11 +32,14 @@ public class Comunidade {
         this.qualidadePremiacao = qualidadePremiacao;
     }
 
-    public long getIdComunidade() {
+    public Comunidade() {
+    }
+
+    public Long getIdComunidade() {
         return idComunidade;
     }
 
-    public void setIdComunidade(long idComunidade) {
+    public void setIdComunidade(Long idComunidade) {
         this.idComunidade = idComunidade;
     }
 
@@ -46,19 +51,19 @@ public class Comunidade {
         this.nome = nome;
     }
 
-    public ArrayList<Usuario> getOrganizadores() {
+    public List<Usuario> getOrganizadores() {
         return organizadores;
     }
 
-    public void setOrganizadores(ArrayList<Usuario> organizadores) {
+    public void setOrganizadores(List<Usuario> organizadores) {
         this.organizadores = organizadores;
     }
 
-    public ArrayList<Usuario> getMembros() {
+    public List<Usuario> getMembros() {
         return membros;
     }
 
-    public void setMembros(ArrayList<Usuario> membros) {
+    public void setMembros(List<Usuario> membros) {
         this.membros = membros;
     }
 

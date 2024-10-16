@@ -6,15 +6,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.ElementCollection;
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idEvento;
+    private Long idEvento;
     private int tipoEvento;
         // 0 a 5 (genérico, educação, reflorestamento, reciclagem, spotbiodiversidade, spotqueimadas)
     private String nomeEvento;
@@ -22,12 +22,18 @@ public class Evento {
     private LocalDate dataEvento;
     private float duracaoEvento;
         // em horas
-    private ArrayList<Premio> premios;
-    private ArrayList<Usuario> coordenadores;
-    private ArrayList<Usuario> participantes;
+
+    @ElementCollection
+    private List<Premio> premios;
+
+    @ElementCollection
+    private List<Usuario> coordenadores;
+
+    @ElementCollection
+    private List<Usuario> participantes;
     private boolean editavel;
 
-    public Evento(long idEvento, int tipoEvento, String nomeEvento, String coordenadas, LocalDate dataEvento, float duracaoEvento, ArrayList<Premio> premios, ArrayList<Usuario> coordenadores, ArrayList<Usuario> participantes, boolean editavel) {
+    public Evento(Long idEvento, int tipoEvento, String nomeEvento, String coordenadas, LocalDate dataEvento, float duracaoEvento, List<Premio> premios, List<Usuario> coordenadores, List<Usuario> participantes, boolean editavel) {
         this.idEvento = idEvento;
         this.tipoEvento = tipoEvento;
         this.nomeEvento = nomeEvento;
@@ -40,11 +46,15 @@ public class Evento {
         this.editavel = editavel;
     }
 
+    public Evento() {
+        ;
+    }
+
     public long getIdEvento() {
         return idEvento;
     }
 
-    public void setIdEvento(long idEvento) {
+    public void setIdEvento(Long idEvento) {
         this.idEvento = idEvento;
     }
 
@@ -88,27 +98,27 @@ public class Evento {
         this.duracaoEvento = duracaoEvento;
     }
 
-    public ArrayList<Premio> getPremios() {
+    public List<Premio> getPremios() {
         return premios;
     }
 
-    public void setPremios(ArrayList<Premio> premios) {
+    public void setPremios(List<Premio> premios) {
         this.premios = premios;
     }
 
-    public ArrayList<Usuario> getCoordenadores() {
+    public List<Usuario> getCoordenadores() {
         return coordenadores;
     }
 
-    public void setCoordenadores(ArrayList<Usuario> coordenadores) {
+    public void setCoordenadores(List<Usuario> coordenadores) {
         this.coordenadores = coordenadores;
     }
 
-    public ArrayList<Usuario> getParticipantes() {
+    public List<Usuario> getParticipantes() {
         return participantes;
     }
 
-    public void setParticipantes(ArrayList<Usuario> participantes) {
+    public void setParticipantes(List<Usuario> participantes) {
         this.participantes = participantes;
     }
 
