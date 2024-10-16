@@ -43,4 +43,76 @@ public class Usuario {
         this.premiosUsuario = premiosUsuario;
         this.amigos = amigos;
     }
+
+    public long getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(long idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public LocalDate getDataCriacaoConta() {
+        return dataCriacaoConta;
+    }
+
+    public void setDataCriacaoConta(LocalDate dataCriacaoConta) {
+        this.dataCriacaoConta = dataCriacaoConta;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getNomeRealUsuario() {
+        return nomeRealUsuario;
+    }
+
+    public void setNomeRealUsuario(String nomeRealUsuario) {
+        this.nomeRealUsuario = nomeRealUsuario;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getCoordenadas() {
+        return coordenadas;
+    }
+
+    public void setCoordenadas(String coordenadas) {
+        this.coordenadas = coordenadas;
+    }
+
+    public ArrayList<Comunidade> getComunidades() {
+        return comunidades;
+    }
+
+    public void setComunidades(ArrayList<Comunidade> comunidades) {
+        this.comunidades = comunidades;
+    }
+
+    public ArrayList<Premio> getPremiosUsuario() {
+        return premiosUsuario;
+    }
+
+    public void setPremiosUsuario(ArrayList<Premio> premiosUsuario) {
+        this.premiosUsuario = premiosUsuario;
+    }
+
+    public ArrayList<Usuario> getAmigos() {
+        return amigos;
+    }
+
+    public void setAmigos(ArrayList<Usuario> amigos) {
+        this.amigos = amigos;
+    }
 }

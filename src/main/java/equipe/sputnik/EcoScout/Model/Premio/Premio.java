@@ -1,7 +1,8 @@
 package equipe.sputnik.EcoScout.Model.Premio;
 
-public abstract class Premio {
+public class Premio {
     private long idPremio;
+    private int tipoPremio; // 0 a 3 (trofeu, medalha, broche e sticker)
     private String nomePremio;
     private String descricaoPremio;
     private String caminhoImagem;
@@ -13,17 +14,15 @@ public abstract class Premio {
         // FRONT-END: se True, então a imagem ficará com uma borda com glow dourado
 
 
-    public Premio(long idPremio, String nomePremio,
-                  String descricaoPremio, String caminhoImagem,
-                  long pontuacaoNecessaria, long pontuacaoAtual,
-                  boolean pontuacaoAtingida) {
-        this.idPremio = idPremio;
-        this.nomePremio = nomePremio;
-        this.descricaoPremio = descricaoPremio;
-        this.caminhoImagem = caminhoImagem;
-        this.pontuacaoNecessaria = pontuacaoNecessaria;
-        this.pontuacaoAtual = pontuacaoAtual;
+    public Premio(boolean pontuacaoAtingida, long pontuacaoAtual, long pontuacaoNecessaria, String caminhoImagem, String descricaoPremio, String nomePremio, int tipoPremio, long idPremio) {
         this.pontuacaoAtingida = pontuacaoAtingida;
+        this.pontuacaoAtual = pontuacaoAtual;
+        this.pontuacaoNecessaria = pontuacaoNecessaria;
+        this.caminhoImagem = caminhoImagem;
+        this.descricaoPremio = descricaoPremio;
+        this.nomePremio = nomePremio;
+        this.tipoPremio = tipoPremio;
+        this.idPremio = idPremio;
     }
 
     public long getIdPremio() {
@@ -32,6 +31,14 @@ public abstract class Premio {
 
     public void setIdPremio(long idPremio) {
         this.idPremio = idPremio;
+    }
+
+    public int getTipoPremio() {
+        return tipoPremio;
+    }
+
+    public void setTipoPremio(int tipoPremio) {
+        this.tipoPremio = tipoPremio;
     }
 
     public String getNomePremio() {
@@ -80,16 +87,5 @@ public abstract class Premio {
 
     public void setPontuacaoAtingida(boolean pontuacaoAtingida) {
         this.pontuacaoAtingida = pontuacaoAtingida;
-    }
-
-    void pontuar(int pontos) {
-        if (!pontuacaoAtingida) {
-            if (pontuacaoNecessaria - pontuacaoAtual - pontos < 0) {
-                this.pontuacaoAtual += pontos;
-            } else {
-                this.pontuacaoAtual = pontuacaoNecessaria;
-                pontuacaoAtingida = true;
-            }
-        }
     }
 }
