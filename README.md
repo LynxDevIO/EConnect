@@ -100,7 +100,3 @@ CREATE TABLE Comunidade_Membros (
     id_usuario BIGINT REFERENCES Usuario(id_usuario),
     PRIMARY KEY (id_comunidade, id_usuario)
 );
-(3, 'Evento 7', '52.5200,13.4050', '2024-07-01', 3.0, TRUE),
-(2, 'Evento 8', '40.4168,-3.7038', '2024-08-01', 1.5, FALSE),
-(1, 'Evento 9', '41.9028,12.4964', '2024-09-01', 2.0, TRUE),
-(3, 'Evento 10', '37.7749,-122.4194', '2024-10-01', 4.0, FALSE);
