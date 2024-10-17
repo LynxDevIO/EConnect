@@ -5,6 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+/*
+    Há uma quantidade determinada de tipos de prêmios.
+    Mas optamos por simplificar o código e o BD sem tornar esta classe abstrata.
+ */
 @Entity
 public class Premio {
     @Id

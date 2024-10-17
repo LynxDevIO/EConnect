@@ -15,6 +15,8 @@ public class Comunidade {
     private Long idComunidade;
     private String nome;
 
+    // todo: alterar ElementCollection para ManyToMany
+
     @ElementCollection
     private List<Usuario> organizadores;
 

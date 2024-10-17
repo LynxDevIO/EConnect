@@ -10,6 +10,10 @@ import jakarta.persistence.ElementCollection;
 import java.time.LocalDate;
 import java.util.List;
 
+/*
+    Há uma quantidade determinada de tipos de eventos.
+    Mas optamos por simplificar o código e o BD sem tornar esta classe abstrata.
+ */
 @Entity
 public class Evento {
     @Id
@@ -23,6 +27,7 @@ public class Evento {
     private float duracaoEvento;
         // em horas
 
+    // todo: alterar ElementCollection para ManyToMany
     @ElementCollection
     private List<Premio> premios;
 
