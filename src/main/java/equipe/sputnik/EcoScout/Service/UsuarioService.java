@@ -33,7 +33,7 @@ public class UsuarioService {
 
     public Usuario updateUsuario(long id, Usuario updatedUsuario) {
         if (usuarioRepository.existsById(id)) {
-            updatedUsuario.setIdUsuario(id);  // Garantir que o ID seja mantido
+            updatedUsuario.setIdUsuario(id);
             return usuarioRepository.save(updatedUsuario);
         }
         return null;

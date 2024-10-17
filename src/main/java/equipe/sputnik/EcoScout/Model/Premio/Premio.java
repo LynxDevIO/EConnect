@@ -11,13 +11,20 @@ public class Premio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPremio;
     private int tipoPremio;
+        // 0 a 3 (toféu, medalha, broche e sticker
     private String nomePremio;
     private String descricaoPremio;
     private String caminhoImagem;
+        // imagem em formato png, com fundo transparente
     private int categoriaPremio;
+        // 0 a 5
+        // "do evento", educativo, reflorestamento, reciclagem,
+        // spot biodiversidade e alerta de queimadas
     private long pontuacaoNecessaria;
+        // 1000, 500, 200 e 50 (apenas uma ideia) por tipo de prêmio respectivamente
     private long pontuacaoAtual;
     private boolean pontuacaoAtingida;
+        // todo: FRONT-END: borda da imagem com glow dourada
 
     public Premio(Long idPremio, int tipoPremio, String nomePremio, String descricaoPremio, String caminhoImagem, int categoriaPremio, long pontuacaoNecessaria, long pontuacaoAtual, boolean pontuacaoAtingida) {
         this.idPremio = idPremio;

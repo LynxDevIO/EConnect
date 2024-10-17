@@ -27,7 +27,7 @@ public class ComunidadeService {
     @Transactional
     public Optional<Comunidade> updateComunidade(long id, Comunidade updatedComunidade) {
         if (comunidadeRepository.existsById(id)) {
-            updatedComunidade.setIdComunidade(id);  // Ensure the ID is maintained
+            updatedComunidade.setIdComunidade(id);
             return Optional.of(comunidadeRepository.save(updatedComunidade));
         }
         return Optional.empty();

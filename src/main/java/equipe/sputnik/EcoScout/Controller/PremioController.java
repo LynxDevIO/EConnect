@@ -16,14 +16,12 @@ public class PremioController {
     @Autowired
     private PremioService premioService;
 
-    // Create a new award
     @PostMapping("/create")
     public ResponseEntity<Premio> createPremio(@RequestBody Premio premio) {
         Premio createdPremio = premioService.createPremio(premio);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdPremio);
     }
 
-    // Get award details by ID
     @GetMapping("/{id}")
     public ResponseEntity<Premio> getPremio(@PathVariable long id) {
         Premio premio = premioService.getPremioById(id);
@@ -34,7 +32,6 @@ public class PremioController {
         }
     }
 
-    // Update an award
     @PutMapping("/update/{id}")
     public ResponseEntity<Premio> updatePremio(@PathVariable long id, @RequestBody Premio premio) {
         Premio updatedPremio = premioService.updatePremio(id, premio);
@@ -45,7 +42,6 @@ public class PremioController {
         }
     }
 
-    // Delete an award
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deletePremio(@PathVariable long id) {
         boolean deleted = premioService.deletePremio(id);
@@ -56,7 +52,6 @@ public class PremioController {
         }
     }
 
-    // Get all awards
     @GetMapping("/all")
     public ResponseEntity<List<Premio>> getAllPremios() {
         List<Premio> premios = premioService.getAllPremios();

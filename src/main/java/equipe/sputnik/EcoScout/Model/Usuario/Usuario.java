@@ -14,7 +14,6 @@ public class Usuario {
     private Long idUsuario;
     private LocalDate dataCriacaoConta;
     private String usuario;
-    @Column(name = "nomeRealUsuario", nullable = false)
     private String nomeRealUsuario;
     private String password;
     private String coordenadas;

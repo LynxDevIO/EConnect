@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ComunidadeRepository extends JpaRepository<Comunidade, Long> {
-    // Additional query methods can be defined here if needed
 }

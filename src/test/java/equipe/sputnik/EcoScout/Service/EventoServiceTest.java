@@ -10,8 +10,6 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.Optional;
@@ -77,6 +75,6 @@ class EventoServiceTest {
         eventoService.createEvento(evento);
 
         mockMvc.perform(delete("/eventos/delete/1"))
-                .andExpect(status().isNoContent()); // Expect 204 No Content
+                .andExpect(status().isNoContent()); // esperado 204
     }
 }

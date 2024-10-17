@@ -17,7 +17,6 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    // Login endpoint
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestParam String usuario, @RequestParam String password) {
         boolean authenticated = usuarioService.login(usuario, password);
@@ -28,14 +27,12 @@ public class UsuarioController {
         }
     }
 
-    // Criar um novo usuário
     @PostMapping("/create")
     public ResponseEntity<Usuario> createUsuario(@RequestBody Usuario usuario) {
         Usuario createdUsuario = usuarioService.createUsuario(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUsuario);
     }
 
-    // Obter detalhes de um usuário por ID
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> getUsuario(@PathVariable long id) {
         Usuario usuario = usuarioService.getUsuarioById(id);
@@ -46,7 +43,6 @@ public class UsuarioController {
         }
     }
 
-    // Atualizar um usuário
     @PutMapping("/update/{id}")
     public ResponseEntity<Usuario> updateUsuario(@PathVariable long id, @RequestBody Usuario usuario) {
         Usuario updatedUsuario = usuarioService.updateUsuario(id, usuario);
@@ -57,7 +53,6 @@ public class UsuarioController {
         }
     }
 
-    // Deletar um usuário
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteUsuario(@PathVariable long id) {
         boolean deleted = usuarioService.deleteUsuario(id);
@@ -68,7 +63,6 @@ public class UsuarioController {
         }
     }
 
-    // Obter todos os usuários
     @GetMapping("/all")
     public ResponseEntity<List<Usuario>> getAllUsuarios() {
         List<Usuario> usuarios = usuarioService.getAllUsuarios();

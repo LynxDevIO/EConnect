@@ -9,5 +9,6 @@ public class EConnectApp {
 	public static void main(String[] args) {
 		SpringApplication.run(EConnectApp.class, args);
 			// servidor inicia na porta padrão: 8080
+			// foi alterado para 9090
 	}
 }

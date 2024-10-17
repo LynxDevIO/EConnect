@@ -16,14 +16,12 @@ public class EventoController {
     @Autowired
     private EventoService eventoService;
 
-    // Create a new event
     @PostMapping("/create")
     public ResponseEntity<Evento> createEvento(@RequestBody Evento evento) {
         Evento createdEvento = eventoService.createEvento(evento);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdEvento);
     }
 
-    // Get event details by ID
     @GetMapping("/{id}")
     public ResponseEntity<Evento> getEvento(@PathVariable long id) {
         Evento evento = eventoService.getEventoById(id);
@@ -34,7 +32,6 @@ public class EventoController {
         }
     }
 
-    // Update an event
     @PutMapping("/update/{id}")
     public ResponseEntity<Evento> updateEvento(@PathVariable long id, @RequestBody Evento evento) {
         Evento updatedEvento = eventoService.updateEvento(id, evento);
@@ -45,7 +42,6 @@ public class EventoController {
         }
     }
 
-    // Delete an event
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteEvento(@PathVariable long id) {
         boolean deleted = eventoService.deleteEvento(id);
@@ -56,7 +52,6 @@ public class EventoController {
         }
     }
 
-    // Get all events
     @GetMapping("/all")
     public ResponseEntity<List<Evento>> getAllEventos() {
         List<Evento> eventos = eventoService.getAllEventos();
