@@ -27,7 +27,6 @@ public class Evento {
     private float duracaoEvento;
         // em horas
 
-    // todo: alterar ElementCollection para ManyToMany
     @ElementCollection
     private List<Premio> premios;
 

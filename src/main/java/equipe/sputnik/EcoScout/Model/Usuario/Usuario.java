@@ -18,8 +18,6 @@ public class Usuario {
     private String password;
     private String coordenadas;
 
-    // todo: alterar ElementCollection para ManyToMany
-
     @ElementCollection
     private List<Comunidade> comunidades;
 
