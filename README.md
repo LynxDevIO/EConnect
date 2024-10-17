@@ -1,8 +1,8 @@
-*TESTES*
+## TESTES ##
 (OK) Teste das funções CRUD no terminal com "curl -X DELETE ou POST..."
 (OK) Criamos 10 entradas para cada entidade do banco de dados abaixo.
 
-*Script para o postgress (BD: Econnect, usuario: postgres, senha: 123123)*
+# #Script para o postgress (BD: Econnect, usuario: postgres, senha: 123123) ##
 INSERT INTO Usuario (data_criacao_conta, usuario, nome_real_usuario, password, coordenadas) VALUES
 ('2023-01-01', 'user1', 'Nome Real 1', 'password1', '40.7128,-74.0060'),
 ('2023-02-01', 'user2', 'Nome Real 2', 'password2', '34.0522,-118.2437'),
