@@ -1,6 +1,6 @@
 ## TESTES ##
-(OK) Teste das funções CRUD no terminal com "curl -X DELETE ou POST..."
-(OK) Criamos 10 entradas para cada entidade do banco de dados abaixo.
+- (OK) Teste das funções CRUD no terminal com "curl -X DELETE ou POST..."
+- (OK) Criamos 10 entradas para cada entidade do banco de dados abaixo.
 
 # #Script para o postgress (BD: Econnect, usuario: postgres, senha: 123123) ##
 -- Tabela Usuario
